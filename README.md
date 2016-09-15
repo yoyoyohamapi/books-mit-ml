@@ -1,3 +1,2 @@
-# My Awesome Book
+# 斯坦福机器学习笔记
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
