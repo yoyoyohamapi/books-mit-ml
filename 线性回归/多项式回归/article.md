@@ -53,4 +53,18 @@ $$
 
 x_1=\frac{x_1}{1000},x_2=\frac{x_2}{\sqrt{1000}}\approx\frac{x_2}{32}
 
+$$归一化过程可以被概括如下：
+__如果特征都是正数__：
 $$
+
+x_i = \frac{x_i}{max} \quad max\mbox{为特征的最大值}
+
+$$
+
+__如果特征含有负数__
+$$
+
+x_i = \frac{x_i-min}{max-min} \quad min, max分别为特征的最小、最大值
+
+$$
+
