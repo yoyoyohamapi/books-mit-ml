@@ -1,5 +1,6 @@
 # 回归问题-程序示例
-下面我们将撰写程序，其中提供了批量梯度下降和随机梯度下降两种学习策略来求解回归方程：
+## 回归程序
+下面我们将撰写程序，其中提供了__批量梯度下降__和__随机梯度下降__两种学习策略来求解回归方程：
 
 ```python
 # coding: utf-8
@@ -145,7 +146,72 @@ def sgd(rate, maxLoop, epsilon, X, y):
             if(error < epsilon):
                 converged = True
     return theta, error, count-1
-
 ```
 
-数据来源[《机器学习实战》](https://www.manning.com/books/machine-learning-in-action)
+> 代码结合注释应该能看懂，借助于Numpy，只是复现了课上的公式。
+
+## 测试程序
+下面，我们分别对bgd和sgd进行测试，__学习率__，__最大迭代次数__都设置为一样，观测二者在误差收敛到$$0.005$$以下的运行状况。
+
+### bgd测试
+```python
+import regression
+import matplotlib.pyplot as plt
+
+if __name__ == "__main__":
+    X, y = regression.loadDataSet('data/ex0.txt');
+
+    rate = 0.01
+    maxLoop = 1000
+    epsilon = 0.005
+
+    result, timeConsumed = regression.bgd(rate, maxLoop, epsilon, X, y)
+    theta,error,iterationCount = result
+
+    fig = plt.figure()
+    title = 'bgd: rate=%.2f, maxLoop=%d, epsilon=%.3f \n time: %ds'%(rate,maxLoop,epsilon,timeConsumed)
+    ax = fig.add_subplot(111, title=title, )
+    ax.scatter(X[:, 1].flatten().A[0], y[:,0].flatten().A[0])
+
+    xCopy = X.copy()
+    xCopy.sort(0)
+    yHat = xCopy*theta
+    ax.plot(xCopy[:,1], yHat)
+    plt.show()
+```
+
+![bgd]()
+
+
+### sgd测试
+```python
+import regression
+import matplotlib.pyplot as plt
+
+if __name__ == "__main__":
+    X, y = regression.loadDataSet('data/ex0.txt');
+
+    rate = 0.01
+    maxLoop = 1000
+    epsilon = 0.005
+
+    result, timeConsumed = regression.sgd(rate, maxLoop, epsilon, X, y)
+    theta,error,iterationCount = result
+
+    fig = plt.figure()
+    title = 'sgd: rate=%.2f, maxLoop=%d, epsilon=%.3f \n time: %ds'%(rate,maxLoop,epsilon,timeConsumed)
+    ax = fig.add_subplot(111, title=title, )
+    ax.scatter(X[:, 1].flatten().A[0], y[:,0].flatten().A[0])
+
+    xCopy = X.copy()
+    xCopy.sort(0)
+    yHat = xCopy*theta
+    ax.plot(xCopy[:,1], yHat)
+    plt.show()
+```
+
+![sgd]()
+
+可以看到，在该数据集（ex0.txt）中，sdg的运行速度卓越，仅耗时$$1s$$，是bgd的$$10$$倍以上。
+
+> 数据来源[《机器学习实战》](https://www.manning.com/books/machine-learning-in-action)
