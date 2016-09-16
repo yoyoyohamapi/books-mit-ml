@@ -2,7 +2,6 @@
     "plugins": ["mathjax", "autocover"],
     "title": "斯坦福机器学习笔记",
     "author": "yoyoyohamapi",
-    "plugins": ["autocover"],
     "pluginsConfig": {
         "autocover": {
           "font": {
