@@ -180,7 +180,7 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-![bgd]()
+![bgd](./bgd.png)
 
 
 ### sgd测试
