@@ -68,6 +68,13 @@ $$
 
 \mbox{重复直到收敛（Repeat until convergence）:}
 \\ \theta_j = \theta_j+\alpha\frac{1}{m}\sum\limits_{i=1}^{m}[y_i-h_\theta(x^{(i)})]x_j^{(i)}
+
+$$
+该函数的矩阵表达如下：
+$$
+
+\theta_j = \theta_j + \alpha\frac{1}{m}(y-X\theta)^Tx_j
+
 $$
 其中，代价函数为：
 $$
