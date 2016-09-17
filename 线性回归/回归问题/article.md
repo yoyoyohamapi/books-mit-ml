@@ -34,10 +34,15 @@ $$
 
 ### 误差评估
 之前我们说到，需要某个__手段__来评估我们的学习效果，即评估各个真实值$$y_i$$与预测值$$h_\theta(x^{(i)})$$之间的误差。最常见的，我们通过*最小均方（Least Mean Square）*来计算误差：
-
 $$
  
 J(\theta)=\frac{1}{2m}\sum\limits_{i=1}^{m}[h_\theta(x^{(i)})-y_i]^2 \quad {m为样本数}
+
+$$
+该函数的矩阵表达为：
+$$
+
+J_\theta=\frac{1}{2m}(X\theta-y)^T(X\theta-y)
 
 $$
 误差评估的函数在机器学习中也称为__代价函数（cost function）__。
