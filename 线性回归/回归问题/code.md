@@ -196,8 +196,13 @@ if __name__ == "__main__":
     plt.show()
 ```
 
+__拟合状况__：
 ![bgd](./attachments/bgd.png)
 
+可以看到，bgd运行的并不慢，这是因为在regression程序中，我们采用了__向量形式__计算$$\theta$$，计算机会通过__并行计算__的手段来优化速度。
+
+__误差随迭代次数的关系__：
+![bgd_errors](./attachments/bgd_errors.png)
 
 ### sgd测试
 ```python
@@ -249,8 +254,9 @@ if __name__ == "__main__":
     plt.show()
 ```
 
+__拟合状况__：
 ![sgd](./attachments/sgd.png)
 
-可以看到，在该数据集（ex0.txt）中，sdg的运行速度卓越，仅耗时$$1s$$，是bgd的$$10$$倍以上。
-
-> 数据来源[《机器学习实战》](https://www.manning.com/books/machine-learning-in-action)
+__误差随迭代次数的关系__：
+![sgd_errors](./attachments/sgd_errors.png)
+在学习率为$$0.01$$时，
