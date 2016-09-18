@@ -148,28 +148,51 @@ def sgd(rate, maxLoop, epsilon, X, y):
 
 ### bgd测试程序
 ```python
+# coding: utf-8
 import regression
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
+import numpy as np
 
 if __name__ == "__main__":
-    X, y = regression.loadDataSet('data/ex0.txt');
+    X, y = regression.loadDataSet('data/ex1.txt');
+
+    m,n = X.shape
+    X = np.concatenate((np.ones((m,1)), X), axis=1)
 
     rate = 0.01
     maxLoop = 1000
-    epsilon = 0.005
+    epsilon = 1
 
     result, timeConsumed = regression.bgd(rate, maxLoop, epsilon, X, y)
-    theta,error,iterationCount = result
+    theta,errors = result
 
-    fig = plt.figure()
+    # 打印拟合曲线
+    fittingFig = plt.figure()
     title = 'bgd: rate=%.2f, maxLoop=%d, epsilon=%.3f \n time: %ds'%(rate,maxLoop,epsilon,timeConsumed)
-    ax = fig.add_subplot(111, title=title, )
-    ax.scatter(X[:, 1].flatten().A[0], y[:,0].flatten().A[0])
+    ax = fittingFig.add_subplot(111, title=title)
+    trainingSet = ax.scatter(X[:, 1].flatten().A[0], y[:,0].flatten().A[0])
 
     xCopy = X.copy()
     xCopy.sort(0)
     yHat = xCopy*theta
-    ax.plot(xCopy[:,1], yHat)
+    fittingLine, = ax.plot(xCopy[:,1], yHat, color='g')
+
+    ax.set_xlabel('Population of City in 10,000s')
+    ax.set_ylabel('Profit in $10,000s')
+
+    plt.legend([trainingSet, fittingLine], ['Training Set', 'Linear Regression'])
+    plt.show()
+
+    # 打印误差曲线
+    errorsFig = plt.figure()
+    ax = errorsFig.add_subplot(111)
+    ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.4f'))
+
+    ax.plot(range(len(errors)), errors)
+    ax.set_xlabel('Number of iterations')
+    ax.set_ylabel('Cost J')
+
     plt.show()
 ```
 
