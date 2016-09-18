@@ -5,6 +5,7 @@
 ```python
 # coding: utf-8
 import numpy as np
+import matplotlib as plt
 import time
 
 def exeTime(func):
@@ -65,12 +66,8 @@ def J(theta, X, y):
     Returns:
         预测误差（代价）
     """
-    result = 0.0
     m = len(X)
-    for i in range(m):
-        diff = pow(y[i,0] - h(theta, X[i].T), 2)
-        result = result + diff
-    return result/(2*m)
+    return (X*theta-y).T*(X*theta-y)/(2*m)
 
 @exeTime
 def bgd(rate, maxLoop, epsilon, X, y):
@@ -92,36 +89,30 @@ def bgd(rate, maxLoop, epsilon, X, y):
     count = 0
     converged = False
     error = float('inf')
+    errors = []
     while count<=maxLoop:
         if(converged):
             break
         count = count + 1
         for j in range(n):
-            if(converged):
-                break
-            result = 0
-            for i in range(m):
-                diff = pow(y[i,0] - h(theta, X[i].T),2)*X[i,j]
-                result =result + diff
-            theta[j,0] = theta[j,0]+rate*result/m
-             # 如果已经收敛
-            error = J(theta, X, y)
-            if(error < epsilon):
-                converged = True
-    return theta,error,count-1
+            deriv = (y-X*theta).T*X[:, j]/m
+            theta[j,0] = theta[j,0]+rate*deriv
+        error = J(theta, X, y)
+        errors.append(error[0,0])
+        # 如果已经收敛
+        if(error < epsilon):
+            converged = True
+    return theta,errors
 
-# 定义随机梯度下降
 @exeTime
 def sgd(rate, maxLoop, epsilon, X, y):
     """随机梯度下降法
-
     Args:
         rate: 学习率
         maxLoop: 最大迭代次数
         epsilon: 收敛精度
         X: 样本矩阵
         y: 标签矩阵
-
     Returns:
         (theta, error, iterationCount), timeConsumed
     """
@@ -131,21 +122,24 @@ def sgd(rate, maxLoop, epsilon, X, y):
     count = 0
     converged = False
     error = float('inf')
+    errors = []
     while count <= maxLoop:
         if(converged):
             break
         count = count + 1
+        errors.append(float('inf'))
         for i in range(m):
             if(converged):
                 break
             diff = y[i,0]-h(theta, X[i].T)
             for j in range(n):
                 theta[j,0] = theta[j,0] + rate*diff*X[i, j]
-            # 如果已经收敛
             error = J(theta, X, y)
+            errors[-1] = error[0,0]
+            # 如果已经收敛
             if(error < epsilon):
                 converged = True
-    return theta, error, count-1
+    return theta, errors
 ```
 
 > 代码结合注释应该能看懂，借助于Numpy，只是复现了课上的公式。
