@@ -213,16 +213,16 @@ if __name__ == "__main__":
     m,n = X.shape
     X = np.concatenate((np.ones((m,1)), X), axis=1)
 
-    rate = 0.01
+    rate = 0.001
     maxLoop = 1000
     epsilon = 1
 
-    result, timeConsumed = regression.bgd(rate, maxLoop, epsilon, X, y)
+    result, timeConsumed = regression.sgd(rate, maxLoop, epsilon, X, y)
     theta,errors = result
 
     # 打印拟合曲线
     fittingFig = plt.figure()
-    title = 'bgd: rate=%.2f, maxLoop=%d, epsilon=%.3f \n time: %ds'%(rate,maxLoop,epsilon,timeConsumed)
+    title = 'sgd: rate=%.3f, maxLoop=%d, epsilon=%.3f \n time: %ds'%(rate,maxLoop,epsilon,timeConsumed)
     ax = fittingFig.add_subplot(111, title=title)
     trainingSet = ax.scatter(X[:, 1].flatten().A[0], y[:,0].flatten().A[0])
 
@@ -247,7 +247,6 @@ if __name__ == "__main__":
     ax.set_ylabel('Cost J')
 
     plt.show()
-
 ```
 
 ![sgd](./attachments/sgd.png)
