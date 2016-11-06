@@ -13,5 +13,5 @@
   * [无监督学习](K-Means/articles/无监督学习.md)
   * [K-Means算法步骤](K-Means/articles/K-Means算法步骤.md)
   * [优化](K-Means/articles/优化.md)
-  * 如何确定聚类数(K-Means/articles/如何确定聚类数.md)
-  * 程序示例(K-Means/codes/程序示例.md)
+  * [如何确定聚类数](K-Means/articles/如何确定聚类数.md)
+  * [程序示例](K-Means/codes/程序示例.md)
