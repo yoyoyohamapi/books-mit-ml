@@ -1,1 +1,101 @@
 # 程序示例-二分KMeans
+仍然是在__kmeans.py__中，我们又添加了二分K-Means算法：
+```python
+# ....
+
+def biKmeans(dataSet, k):
+    """
+    二分kmeans算法
+    Args:
+        dataSet: 数据集
+        k: 聚类数
+    Returns:
+        centroids: 聚类中心
+        clusterAssment: 点分配结果
+    """
+    # 起始时，只有一个簇，该簇的聚类中心为所有样本的平均位置
+    centroid0 = np.mean(dataSet, axis=0).tolist()[0]
+    # 设置一个列表保存当前的聚类中心
+    currentCentroids = [centroid0]
+    # 点分配结果： 第一列指明样本所在的簇，第二列指明该样本到聚类中心的距离
+    clusterAssment = np.mat(np.zeros(m, 2))
+    # 初始化点分配结果，默认将所有样本先分配到初始簇
+    m, n = np.shape(dataSet)
+    for j in range(m):
+        clusterAssment[j, 0] = 0
+        clusterAssment[j, 1] = distEclud(dataSet[j, :] - np.mat(centroid0))**2
+    # 直到簇的数目达标
+    while(len(currentCentroids) < k):
+        # 当前最小的代价
+        lowestError = np.inf
+        # 对于每一个簇
+        for j in range(len(currentCentroids)):
+            # 获得该簇的样本
+            ptsInCluster = dataSet[np.nonzero(clusterAssment[:, 0].A == j)[0]]
+            # 在该簇上进行2-means聚类
+            # 注意，得到的centroids，其聚类编号含0，1
+            centroids, clusterAss = kmeans(ptsInCluster, 2)
+            # 获得划分后的误差之和
+            splitedError = np.sum(clusterAss[:, 1])
+            # 获得其他簇的样本
+            ptsNoInCluster = dataSet[np.nonzero(
+                clusterAssment[:, 0].A != j)[0]]
+            # 获得剩余数据集的误差
+            nonSplitedError = np.sum(ptsNoInCluster[:, 1])
+            # 比较，判断此次划分是否划算
+            if(splitedError + nonSplitedError) < lowestError:
+                # 如果划算，刷新总误差
+                lowestError = splitedError + nonSplitedError
+                # 记录当前的应当划分的簇
+                needToSplit = j
+                # 新获得的簇以及点分配结果
+                newCentroids = centroids
+                newClusterAss = clusterAss.copy()
+        # 更新簇的分配结果
+        # 第0簇应当修正为被划分的簇
+        newClusterAss[np.nonzero(newClusterAss[:, 0].A == 0)[0], 0] = needToSplit
+        # 第1簇应当修正为最新一簇
+        newClusterAss[np.nonzero(newClusterAss[:, 0].A == 1)[0], 0] = len(centroids)
+        # 被划分的簇需要更新
+        currentCentroids[needToSplit] = newCentroids[0, :]
+        # 加入新的划分后的簇
+        currentCentroids.append(newCentroids[1, :])
+        # 刷新点分配结果
+        clusterAssment[np.nonzero(clusterAssment[:, 0].A == newCentroids[0])]
+    return np.mat(currentCentroids), clusterAssment
+
+# ...
+```
+
+__测试__：
+
+```python
+# coding: utf-8
+import kmeans
+import numpy as np
+import matplotlib.pyplot as plt
+
+if __name__ == "__main__":
+    dataMat = np.mat(kmeans.loadDataSet('data/testSet2.txt'))
+    centroids, clusterAssment = kmeans.kMeans(dataMat, 3)
+    clusterCount = np.shape(centroids)[0]
+    m = np.shape(dataMat)[0]
+    # 绘制散点图
+    patterns = ['o', 'D', '^']
+    colors = ['b', 'g', 'y']
+    fig = plt.figure()
+    title = 'bi-kmeans with k=3'
+    ax = fig.add_subplot(111, title=title)
+    for k in range(clusterCount):
+        # 绘制聚类中心
+        ax.scatter(centroids[k,0], centroids[k,1], color='r', marker='+', linewidth=20)
+        for i in range(m):
+            # 绘制属于该聚类中心的样本
+            ptsInCluster = dataMat[np.nonzero(clusterAssment[:, 0].A==k)[0]]
+            ax.scatter(ptsInCluster[:, 0].flatten().A[0], ptsInCluster[:, 1].flatten().A[0], marker=patterns[k], color=colors[k])
+    plt.show()
+```
+
+__运行结果__：
+
+![二分KMeans](../attachments/bikmeans.png)
