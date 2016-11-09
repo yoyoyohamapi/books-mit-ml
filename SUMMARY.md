@@ -18,5 +18,5 @@
   * [如何确定聚类数](KMeans/articles/如何确定聚类数.md)
   * [二分K-Means算法](KMeans/articles/二分KMeans算法.md)
   * [程序示例-KMeans](KMeans/codes/Kmeans.md)
-  * [程序示例-二分KMeans](KMeans/articles/二分KMeans.md)
+  * [程序示例-二分KMeans](KMeans/codes/二分KMeans.md)
 
