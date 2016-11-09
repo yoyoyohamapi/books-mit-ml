@@ -147,8 +147,12 @@ if __name__ == "__main__":
 
 - $$k=2$$
 
-![k=2](../attachments/k2.png)
+![k=2](../attachments/kmeans_2.png)
 
 - $$k=4$$
 
-![k=4](../attachments/k4.png)
+![k=4](../attachments/kmeans_4.png)
+
+值得一体的是，在$$k=2$$的情况下，还会引起不同的聚类结果：
+
+![k=2_2](../attachments/kmeans_2_2.png)
