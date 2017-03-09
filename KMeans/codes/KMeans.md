@@ -2,9 +2,8 @@
 __kmeans.py__：
 ```python
 # coding: utf-8
-
+# kmeans/kmeans.py
 import numpy as np
-
 
 def loadDataSet(filename):
     """
@@ -118,6 +117,7 @@ __测试__：
 
 ```python
 # coding: utf-8
+# kmeans/test_normal_kmeans.py
 import kmeans
 import numpy as np
 import matplotlib.pyplot as plt

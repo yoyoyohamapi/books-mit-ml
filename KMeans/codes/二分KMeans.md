@@ -1,8 +1,10 @@
 # 程序示例-二分KMeans
 仍然是在__kmeans.py__中，我们又添加了二分K-Means算法：
 ```python
-# ....
+# coding: utf-8
+# kmeans/kmeans.py
 
+# ...
 def biKmeans(dataSet, k):
     """
     二分kmeans算法
@@ -71,6 +73,7 @@ __测试__：
 
 ```python
 # coding: utf-8
+# kmeans/test_bi_kmeans.py
 import kmeans
 import numpy as np
 import matplotlib.pyplot as plt
