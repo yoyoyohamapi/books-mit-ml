@@ -2,4 +2,4 @@
 
 本书为斯坦福吴恩达教授的在coursera上的[机器学习公开课](https://zh.coursera.org/learn/machine-learning)的知识笔记，涵盖了大部分课上涉及到的知识点和内容，因为篇幅有限，所以相关公式的推导没有在做记录，但推荐大家还是在草稿本上演算一遍，加深印象，知其然还要知其所以然。
 
-本书涉及到的程序代码均放在了我个人的[github](https://github.com/yoyoyohamapi/mit-ml)上，欢迎fork并纠正错误。
+本书涉及到的程序代码均放在了我个人的[github](https://github.com/yoyoyohamapi/mit-ml)上，采用了python实现，之所以不用octave或者matlab，是想要避免直接使用现有的课程作业来撰写代码，因为斯坦福的课后作业是填空式的程序作业，我更想完整的实现每个算法，坎坷更多，但收获也更多。
