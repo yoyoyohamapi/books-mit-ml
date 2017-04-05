@@ -38,6 +38,14 @@
   * [偏斜类](算法分析与优化/articles/偏斜类.md)
   * [大数据集](算法分析与优化/articles/大数据集.md)
   * [程序示例--算法诊断](算法分析与优化/codes/算法诊断.md)
+* SVM（支持向量机）
+  * [代价函数](SVM/articles/代价函数.md)
+  * [大间距分类器](SVM/articles/大间距分类器.md)
+  * [核函数](SVM/articles/核函数.md)
+  * [SVM的使用建议](SVM/articles/SVM的使用建议.md)
+  * [程序示例--SVM模型设计](SVM/codes/SVM模型设计.md)
+  * [程序示例--线性分类](SVM/codes/线性分类.md)
+  * [程序示例--非线性分类](SVM/codes/非线性分类.md)
 * K-Means
   * [无监督学习](KMeans/articles/无监督学习.md)
   * [K-Means算法步骤](KMeans/articles/K-Means算法步骤.md)
