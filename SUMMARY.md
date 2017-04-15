@@ -43,7 +43,9 @@
   * [大间距分类器](SVM/articles/大间距分类器.md)
   * [核函数](SVM/articles/核函数.md)
   * [SVM的使用建议](SVM/articles/SVM的使用建议.md)
-  * [程序示例--SVM模型设计](SVM/codes/SVM模型设计.md)
+  * [SVM补充](SVM/articles/SVM补充.md)
+  * [SMO](SVM/articles/SMO.md)
+  * [程序示例--基于 SMO 的 SVM 模型](SVM/codes/SVM模型设计.md)
   * [程序示例--线性分类](SVM/codes/线性分类.md)
   * [程序示例--非线性分类](SVM/codes/非线性分类.md)
 * K-Means
