@@ -48,6 +48,7 @@
   * [程序示例--基于 SMO 的 SVM 模型](SVM/codes/SVM模型设计.md)
   * [程序示例--线性分类](SVM/codes/线性分类.md)
   * [程序示例--非线性分类](SVM/codes/非线性分类.md)
+  * [程序示例--模型选择](SVM/codes/模型选择.md)
 * K-Means
   * [无监督学习](KMeans/articles/无监督学习.md)
   * [K-Means算法步骤](KMeans/articles/K-Means算法步骤.md)
