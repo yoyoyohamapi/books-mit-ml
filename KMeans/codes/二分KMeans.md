@@ -1,5 +1,8 @@
-# 程序示例-二分KMeans
-仍然是在__kmeans.py__中，我们又添加了二分K-Means算法：
+程序示例--二分 K-Means
+--------------
+
+仍然是在 `kmeans.p` 中，我们又添加了二分 K-Means 算法：
+
 ```python
 # coding: utf-8
 # kmeans/kmeans.py
@@ -69,7 +72,8 @@ def biKmeans(dataSet, k):
 # ...
 ```
 
-__测试__：
+测试
+---------
 
 ```python
 # coding: utf-8
@@ -99,6 +103,8 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-__运行结果__：
+运行结果如下：
 
-![二分KMeans](../attachments/bikmeans.png)
+<div style="text-align: center">
+<img src="../attachments/bikmeans.png" width="500"></img>
+</div>

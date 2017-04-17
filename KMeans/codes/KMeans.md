@@ -1,5 +1,9 @@
-# 程序示例-Kmeans
-__kmeans.py__：
+程序示例--K-Means
+=============
+
+函数定义
+-------
+
 ```python
 # coding: utf-8
 # kmeans/kmeans.py
@@ -113,7 +117,8 @@ def kMeans(dataSet, k):
     return centroids, clusterAssment
 ```
 
-__测试__：
+测试
+----------
 
 ```python
 # coding: utf-8
@@ -143,16 +148,22 @@ if __name__ == "__main__":
     plt.show()
 ```
 
-我分别测试了$$k=2$$以及$$k=4$$时的聚类效果：
+我分别测试了 $$k=2$$ 以及 $$k=4$$ 时的聚类效果：
 
 - $$k=2$$
 
-![k=2](../attachments/kmeans_2.png)
+<div style="text-align: center">
+<img src="../attachments/kmeans_2.png" width="500"></img>
+</div>
 
 - $$k=4$$
 
-![k=4](../attachments/kmeans_4.png)
+<div style="text-align: center">
+<img src="../attachments/kmeans_4.png" width="500"></img>
+</div>
 
-值得一体的是，在$$k=2$$的情况下，还会引起不同的聚类结果：
+值得一体的是，在 $$k=2$$ 的情况下，还会引起不同的聚类结果：
 
-![k=2_2](../attachments/kmeans_2_2.png)
+<div style="text-align: center">
+<img src="../attachments/kmeans_2_2.png" width="500"></img>
+</div>
