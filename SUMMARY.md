@@ -10,7 +10,7 @@
   * [欠拟合与过拟合](线性回归/articles/欠拟合与过拟合.md)
   * [程序示例--局部加权线性回归](线性回归/codes/局部加权线性回归.md)
 * 逻辑回归
-  * [0-1分类问题](逻辑回归/articles/01分类问题.md)
+  * [0/1 分类问题](逻辑回归/articles/01分类问题.md)
   * [逻辑回归](逻辑回归/articles/逻辑回归.md)
   * [利用正规化解决过拟合问题](逻辑回归/articles/利用正规化解决过拟合问题.md)
   * [程序示例--线性决策边界](逻辑回归/codes/线性决策边界.md)
@@ -18,7 +18,7 @@
   * [多分类问题](逻辑回归/articles/多分类问题.md)
   * [程序示例--多分类问题](逻辑回归/codes/多分类问题.md)
 * 神经网络
-  * [再论01分类问题](神经网络/articles/再论01分类问题.md)
+  * [再论 0/1 分类问题](神经网络/articles/再论01分类问题.md)
   * [神经网络概述](神经网络/articles/神经网络概述.md)
   * [前向传播与反向传播](神经网络/articles/前向传播与反向传播.md)
   * [参数展开](神经网络/articles/参数展开.md)
@@ -42,8 +42,8 @@
   * [代价函数](SVM/articles/代价函数.md)
   * [大间距分类器](SVM/articles/大间距分类器.md)
   * [核函数](SVM/articles/核函数.md)
-  * [SVM的使用建议](SVM/articles/SVM的使用建议.md)
-  * [SVM补充](SVM/articles/SVM补充.md)
+  * [SVM 的使用建议](SVM/articles/SVM的使用建议.md)
+  * [SVM 补充](SVM/articles/SVM补充.md)
   * [SMO](SVM/articles/SMO.md)
   * [程序示例--基于 SMO 的 SVM 模型](SVM/codes/SVM模型设计.md)
   * [程序示例--线性分类](SVM/codes/线性分类.md)
