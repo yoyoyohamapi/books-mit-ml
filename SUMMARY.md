@@ -59,3 +59,9 @@
   * [二分 K-Means 算法](KMeans/articles/二分KMeans算法.md)
   * [程序示例--K-Means](KMeans/codes/KMeans.md)
   * [程序示例--二分 K-Means](KMeans/codes/二分KMeans.md)
+* 特征降维
+  * [概述](特征降维/articles/概述.md)
+  * [PCA](特征降维/articles/PCA.md)
+  * [程序示例--PCA 模型](特征降维/codes/PCA模型.md)
+  * [程序示例--PCA for 加速学习](特征降维/codes/PCAfor加速学习.md)
+  * [程序示例--PCA for 数据可视化](特征降维/codes/PCAfor数据可视化.md)
