@@ -9,7 +9,6 @@
 # kmeans/kmeans.py
 import numpy as np
 
-
 def loadDataSet(filename):
     """
     读取数据集
@@ -28,7 +27,6 @@ def loadDataSet(filename):
         dataMat.append(fitLine)
     return dataMat
 
-
 def distEclud(vecA, vecB):
     """
     计算两向量的欧氏距离
@@ -41,18 +39,6 @@ def distEclud(vecA, vecB):
     """
     return np.sqrt(np.sum(np.power(vecA - vecB, 2)))
 
-
-def J():
-    """
-    计算失真函数
-
-    Args:
-
-    Returns:
-        失真函数
-    """
-
-
 def randCent(dataSet, k):
     """
     随机生成k个聚类中心
@@ -63,7 +49,7 @@ def randCent(dataSet, k):
     Returns:
         centroids: 聚类中心矩阵
     """
-    n = np.shape(dataSet)[1]
+    _, n = dataSet.shape
     centroids = np.mat(np.zeros((k, n)))
     for j in range(n):
         # 随机聚类中心落在数据集的边界之内
@@ -73,8 +59,7 @@ def randCent(dataSet, k):
         centroids[:, j] = minJ + rangeJ * np.random.rand(k, 1)
     return centroids
 
-
-def kMeans(dataSet, k):
+def kMeans(dataSet, k, maxIter = 5):
     """
     K-Means
 
@@ -93,7 +78,9 @@ def kMeans(dataSet, k):
     # 标识聚类中心是否仍在改变
     clusterChanged = True
     # 直至聚类中心不再变化
-    while clusterChanged:
+    iterCount = 0
+    while clusterChanged and iterCount < maxIter:
+        iterCount += 1
         clusterChanged = False
         # 分配样本到簇
         for i in range(m):
@@ -114,10 +101,10 @@ def kMeans(dataSet, k):
             # 通过数组过滤获得簇中的点
             ptsInCluster = dataSet[np.nonzero(
                 clusterAssment[:, 0].A == cent)[0]]
-            # 计算均值并移动
-            centroids[cent, :] = np.mean(ptsInCluster, axis=0)
+            if ptsInCluster.shape[0] > 0:
+                # 计算均值并移动
+                centroids[cent, :] = np.mean(ptsInCluster, axis=0)
     return centroids, clusterAssment
-
 ```
 
 我分别测试了 $$k=2$$ 以及 $$k=4$$ 时的聚类效果：
