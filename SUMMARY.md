@@ -80,3 +80,7 @@
   * [低秩矩阵分解](推荐系统/articles/低秩矩阵分解.md)
   * [均值标准化](推荐系统/articles/均值标准化.md)
   * [程序示例--推荐系统](推荐系统/codes/推荐系统.md)
+* 大规模机器学习
+  * [掌握大数据](大规模机器学习/articles/掌握大数据.md)
+  * [梯度下降](大规模机器学习/articles/梯度下降.md)
+  * [在线学习与MapReduce](大规模机器学习/articles/在线学习与MapReduce.md)
