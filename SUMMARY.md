@@ -84,3 +84,8 @@
   * [掌握大数据](大规模机器学习/articles/掌握大数据.md)
   * [梯度下降](大规模机器学习/articles/梯度下降.md)
   * [在线学习与MapReduce](大规模机器学习/articles/在线学习与MapReduce.md)
+* 案例--光学字符识别
+  * [问题描述及算法流程](光学字符识别/articles/问题描述及流程.md)
+  * [滑动窗口](光学字符识别/articles/滑动窗口.md)
+  * [人工合成数据](光学字符识别/articles/人工合成数据.md)
+  * [上限分析](光学字符识别/articles/上限分析.md)
