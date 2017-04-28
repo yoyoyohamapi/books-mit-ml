@@ -1,4 +1,4 @@
-SMO(Sequential minimal optimization)
+SMO（Sequential minimal optimization）
 =============
 
 引子
@@ -31,7 +31,7 @@ $$
 
 $$
 
-在 SMO（序列最小化）方法出现之前，人们依赖于二次规划求解工具来解决上述的优化问题，训练 SVM。这些工具需要具有强大计算能力的计算机进行支撑，实现也比较复杂。1998年，微软研究院的 [John Platt](https://www.gitbook.com/book/yoyoyohamapi/undersercore-analysis/discussions?state=closed) 提出了 SMO 算法将优化问题分解为容易求解的若干小的优化问题，来训练 SVM。简言之，SMO 仅关注 **$$alpha$$ 对** 和 ** 偏置 $$b$$ **  的求解更新，进而求解出权值向量 $$w$$，得到决策边界（分割超平面），从而大大减少了运算复杂度。
+在 SMO（序列最小化）方法出现之前，人们依赖于二次规划求解工具来解决上述的优化问题，训练 SVM。这些工具需要具有强大计算能力的计算机进行支撑，实现也比较复杂。1998 年，微软研究院的 [John Platt](https://www.gitbook.com/book/yoyoyohamapi/undersercore-analysis/discussions?state=closed) 提出了 SMO 算法将优化问题分解为容易求解的若干小的优化问题，来训练 SVM。简言之，SMO 仅关注 **$$alpha$$ 对** 和 ** 偏置 $$b$$ **  的求解更新，进而求解出权值向量 $$w$$，得到决策边界（分割超平面），从而大大减少了运算复杂度。
 
 
 算法介绍
@@ -254,6 +254,6 @@ SMO 以编程的眼光，将启发式选择 $$(\alpha^{(i)}, \alpha^{(j)})$$ 描
 - [Platt, John (1998), Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf)
 - [Wiki-SMO](https://en.wikipedia.org/wiki/Sequential_minimal_optimization)
 - [支持向量机通俗导论（理解 SVM 的三层境界）](http://blog.csdn.net/v_july_v/article/details/7624837)
-- [《机器学习实战》](https://item.jd.com/11242112.html)
-- [《机器学习》](https://item.jd.com/11867803.html)
+- [《机器学习实战》](https://book.douban.com/subject/24703171/)
+- [《机器学习》](https://book.douban.com/subject/26708119/)
 - [Sequential Minimal Optimization for SVM](http://web.cs.iastate.edu/~honavar/smo-svm.pdf)

@@ -87,5 +87,5 @@ if __name__ == "__main__":
 运行结果如下：
 
 <div style="text-align: center">
-<img src="../attachments/bikmeans.png" width="500"></img>
+<img src="../attachments/bikmeans.png" width="300"></img>
 </div>

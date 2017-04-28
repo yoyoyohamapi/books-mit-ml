@@ -112,17 +112,17 @@ def kMeans(dataSet, k, maxIter = 5):
 - $$k=2$$
 
 <div style="text-align: center">
-<img src="../attachments/kmeans_2.png" width="500"></img>
+<img src="../attachments/kmeans_2.png" width="300"></img>
 </div>
 
 - $$k=4$$
 
 <div style="text-align: center">
-<img src="../attachments/kmeans_4.png" width="500"></img>
+<img src="../attachments/kmeans_4.png" width="300"></img>
 </div>
 
 值得一体的是，在 $$k=2$$ 的情况下，还会引起不同的聚类结果：
 
 <div style="text-align: center">
-<img src="../attachments/kmeans_2_2.png" width="500"></img>
+<img src="../attachments/kmeans_2_2.png" width="300"></img>
 </div>

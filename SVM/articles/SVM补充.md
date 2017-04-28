@@ -52,7 +52,9 @@ $$
 
 $$\gamma$$ 被称之为间隔。
 
-<img src="../attachments/支持向量与间隔.png" width="500"/>
+<div style="text-align:center">
+<img src="../attachments/支持向量与间隔.png" width="500"></img>
+</div>
 
 在之前的篇章中我们知道，SVM 就是力图是 $$\gamma$$ 足够大，从而获得更好的泛化能力：
 
@@ -83,15 +85,21 @@ $$
 
 下图中，红色的决策边界表示了一种较**硬**的间隔划分，这种划分，能将所有正、负样本区分开来：
 
-<img src="../attachments/硬间隔.png" width="400"/>
+<div style="text-align:center">
+<img src="../attachments/硬间隔.png" width="400"></img>
+</div>
 
 硬间隔并不一定好，就像我们在回归问题中提到的那样，这只是对于训练样本作出了极佳的拟合，但容易造成**过度拟合**。比如我们现在有了一个新的负样本，他被错误地分类为了正样本：
 
-<img src="../attachments/硬间隔添加样本.png" width="400"/>
+<div style="text-align:center">
+<img src="../attachments/硬间隔添加样本.png" width="400"></img>
+</div>
 
 而下图则展示了一种较**软**的间隔，这样的决策边界允许了一部分分类异常，避免了**过拟合**问题，但如果过软，也容易造成**欠拟合**问题：
 
-<img src="../attachments/软间隔.png" width="400"/>
+<div style="text-align:center">
+<img src="../attachments/软间隔.png" width="400"></img>
+</div>
 
 鉴于此，我们在优化过程中，添加一个参数 $$C$$ 来控制间隔的“软硬”：
 
@@ -118,12 +126,12 @@ $$
 
 | 名称      | 函数式                                                                                       |
 |:----------|:---------------------------------------------------------------------------------------------|
-| 0/1损失   | $$ \ell(z) = \begin{cases} 1, \quad \mbox{if $z \lt 0$} \\ 0, \mbox{otherwise} \end{cases}$$ |
-| hinge损失 | $$ \ell(z) = max(0, 1-z) $$                                                                  |
+| 0/1 损失   | $$ \ell(z) = \begin{cases} 1, \quad \mbox{if $z \lt 0$} \\ 0, \mbox{otherwise} \end{cases}$$ |
+| hinge 损失 | $$ \ell(z) = max(0, 1-z) $$                                                                  |
 | 指数损失  | $$\ell(z) = exp(-z)$$                                                                        |
 | 对数损失  | $$ \ell(z) = log(1+exp(-z)) $$                                                               |
 
-若采用hinge损失函数，则式 (8) 可以具体为：
+若采用 hinge 损失函数，则式 (8) 可以具体为：
 
 $$
 
@@ -131,7 +139,9 @@ $$
 
 $$
 
-<img src="../attachments/损失函数.png" width="500"/>
+<div style="text-align:center">
+<img src="../attachments/损失函数.png" width="500"></img>
+</div>
 
 引入 **“松弛变量（slack variables）”** $$\xi^{(i)} \geq 0$$，可以将式 (9) 改写为：
 
@@ -209,7 +219,7 @@ $$
 
 $$
 
-对于软间隔支持向量机，[KKT条件](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)要求：
+对于软间隔支持向量机，[KKT 条件](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)要求：
 
 $$
 
@@ -275,11 +285,13 @@ $$
 
 假定我们面临的数据呈现下面这样的分布：
 
-<img src="../attachments/非线性决策边界.png" width="500"/>
+<div style="text-align:center">
+<img src="../attachments/非线性决策边界.png" width="300"></img>
+</div>
 
 显然，这不是一个线性可分的问题，在逻辑回归中，我们会通过多项式扩展来创建新的高维特征，从而将低维度的线性不可分问题转换为了高维度的线性可分问题。
 
-在 SVM 中，仍然是考虑将低维不可分问题转换到高纬度可分问题：
+在 SVM 中，仍然是考虑将低维不可分问题转换到高维度可分问题：
 
 $$
 
@@ -287,7 +299,7 @@ f(x) = w^T\phi(x)+b \tag{22}
 
 $$
 
-$$\phi(x)$$ 对应了 $$x$$ 的高纬度特征向量。
+$$\phi(x)$$ 对应了 $$x$$ 的高维度特征向量。
 
 此时，SVM 优化模型的对偶问题为：
 
@@ -344,11 +356,11 @@ $$
 | 高斯核     | $$exp(-\frac{                              | |x^{(i)} - x^{(j)}||^2}{2\delta^2})$$ | $$\delta$$ 为高斯核带宽                               |
 | 多项式核   | $$((x^{(i)})^T x^{(j)})^d$$                | $$ d \geq 1$$ 为多项式次数                                                                    |
 | 拉普拉斯核 | $$exp(-\frac{                              | |x^{(i)} - x^{(j)}||^2}{\delta})$$                                      |     $$\delta > 0 $$ |
-| Sigmoid核  | $$tanh(\beta(x^{(i)})^Tx^{(j)} + \theta)$$ | $$tanh$$为双曲正切函数，$$\beta > 0, \theta < 0$$                                             |
+| Sigmoid 核  | $$tanh(\beta(x^{(i)})^Tx^{(j)} + \theta)$$ | $$tanh$$为双曲正切函数，$$\beta > 0, \theta < 0$$                                             |
 
 参考资料
 ---------------
 
-- [《机器学习》](https://item.jd.com/11867803.html)
+- [《机器学习》](https://book.douban.com/subject/26708119/)
 - [支持向量机通俗导论（理解 SVM 的三层境界）](http://blog.csdn.net/v_july_v/article/details/7624837)
 - [支持向量机](http://www.cnblogs.com/jerrylead/archive/2011/03/13/1982639.html)
