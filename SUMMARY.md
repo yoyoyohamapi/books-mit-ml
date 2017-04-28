@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * 线性回归
   * [回归问题](线性回归/articles/回归问题.md)
+  * [线性回归与梯度下降](线性回归/articles/线性回归与梯度下降.md)
   * [程序示例--梯度下降](线性回归/codes/梯度下降.md)
   * [正规方程](线性回归/articles/正规方程.md)
   * [特征缩放](线性回归/articles/特征缩放.md)
