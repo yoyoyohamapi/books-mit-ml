@@ -67,7 +67,7 @@
   * [程序示例--PCA 模型](特征降维/codes/PCA模型.md)
   * [程序示例--PCA for 加速学习](特征降维/codes/PCAfor加速学习.md)
   * [程序示例--PCA for 数据可视化](特征降维/codes/PCAfor数据可视化.md)
-* 异常检测
+* [异常检测](yi-chang-jian-ce.md)
   * [概述](异常检测/articles/概述.md)
   * [高斯分布模型](异常检测/articles/高斯分布.md)
   * [算法流程与评估](异常检测/articles/算法流程与评估.md)
@@ -75,7 +75,7 @@
   * [特征选择](异常检测/articles/特征选择.md)
   * [多元高斯分布模型](异常检测/articles/多元高斯分布.md)
   * [程序示例--异常检测](异常检测/codes/异常检测.md)
-* 推荐系统
+* [推荐系统](tui-jian-xi-tong.md)
   * [基于内容的推荐系统](推荐系统/articles/基于内容的推荐系统.md)
   * [协同过滤](推荐系统/articles/协同过滤.md)
   * [低秩矩阵分解](推荐系统/articles/低秩矩阵分解.md)
@@ -90,3 +90,4 @@
   * [滑动窗口](光学字符识别/articles/滑动窗口.md)
   * [人工合成数据](光学字符识别/articles/人工合成数据.md)
   * [上限分析](光学字符识别/articles/上限分析.md)
+

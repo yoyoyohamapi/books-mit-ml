@@ -1,11 +1,8 @@
 {
-    "plugins": ["mathjax"],
+    "plugins": ["mathjax-new-cdn"],
     "title": "斯坦福机器学习笔记",
     "author": "yoyoyohamapi",
     "pluginsConfig": {
-        "mathjax":{
-            "forceSVG": true
-        },
         "autocover": {
             "font": {
                 "size": null,
