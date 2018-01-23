@@ -3,6 +3,9 @@
     "title": "斯坦福机器学习笔记",
     "author": "yoyoyohamapi",
     "pluginsConfig": {
+        "mathjax":{
+            "forceSVG": true
+        },
         "autocover": {
             "font": {
                 "size": null,
@@ -16,6 +19,9 @@
             "background": {
                 "color": "#09F"
             }
+                "forceSVG": true
+            }
+            "forceSVG": true
         }
     }
 }
