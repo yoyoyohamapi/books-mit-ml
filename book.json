@@ -1,5 +1,5 @@
 {
-    "plugins": ["mathjax-new-cdn"],
+    "plugins": ["mathjax-updated-deps"],
     "title": "斯坦福机器学习笔记",
     "author": "yoyoyohamapi",
     "pluginsConfig": {
