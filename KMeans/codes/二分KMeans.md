@@ -1,7 +1,7 @@
 程序示例--二分 K-Means
 --------------
 
-仍然是在 `kmeans.p` 中，我们又添加了二分 K-Means 算法：
+仍然是在 `kmeans.py` 中，我们又添加了二分 K-Means 算法：
 
 ```python
 # coding: utf-8
