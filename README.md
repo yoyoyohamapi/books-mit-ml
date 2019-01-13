@@ -1,3 +1,9 @@
+Book 地址
+=======
+
+https://yoyoyohamapi.gitbooks.io/mit-ml/content/
+
+
 斯坦福机器学习笔记
 ==================
 
