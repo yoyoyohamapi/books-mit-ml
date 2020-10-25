@@ -1,7 +1,7 @@
 Book 地址
 =======
 
-https://yoyoyohamapi.gitbooks.io/mit-ml/content/
+https://app.gitbook.com/@wu-xiao-jun/s/mit-ml/
 
 
 斯坦福机器学习笔记
